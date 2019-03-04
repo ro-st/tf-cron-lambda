@@ -11,6 +11,7 @@ $ terraform init
 
 ## Configurable
 
+`vars.tf`
 - aws_region
 - lambda_interval_metric
 - lambda_interval_value
