@@ -12,14 +12,14 @@ $ terraform init
 ## Configurable
 
 `vars.tf`
-- aws_region
-- lambda_interval_metric
-- lambda_interval_value
-- lambda_name
-- lambda_runtime
-- lambda_source
-- lambda_output
-- lambda_handler
+- aws_region (`eu-west-1`)
+- lambda_interval_metric (`minutes`)
+- lambda_interval_value (`15`)
+- lambda_name (`cronLambda`)
+- lambda_runtime (`nodejs8.10`)
+- lambda_source (`src/`)
+- lambda_output (`dist/lambda.zip`)
+- lambda_handler (`index.handler`)
 
 ## Deploy
 ```

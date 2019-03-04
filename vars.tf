@@ -25,7 +25,7 @@ variable "lambda_interval_metric" {
 
 variable "lambda_name" {
     type = "string"
-    default = "trCheck"
+    default = "cronLambda"
 }
 
 variable "lambda_runtime" {
