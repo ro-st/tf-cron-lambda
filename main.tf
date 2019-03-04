@@ -24,7 +24,7 @@ resource "aws_cloudwatch_event_rule" "cron_job" {
     schedule_expression = "rate(${var.lambda_interval_value} ${var.lambda_interval_metric})"
 }
 
-resource "aws_cloudwatch_event_target" "target" {
+resource "aws_cloudwatch_event_target" "cron_target" {
     rule = "${aws_cloudwatch_event_rule.cron_job.name}"
     target_id = "cron_lambda_target"
     arn = "${aws_lambda_function.cron_lambda.arn}"
@@ -35,5 +35,5 @@ resource "aws_lambda_permission" "allow_cloudwatch_cron_invoke" {
     action = "lambda:InvokeFunction"
     function_name = "${var.lambda_name}"
     principal = "events.amazonaws.com"
-    source_arn = "${aws_cloudwatch_event_target.target.arn}"
+    source_arn = "${aws_cloudwatch_event_target.cron_target.arn}"
 }
